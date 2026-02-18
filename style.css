@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(160deg, #f48b8b, #f7b5a8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+
+.container {
+  width: 100%;
+  max-width: 380px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(18px);
+  border-radius: 28px;
+  padding: 35px 25px;
+  text-align: center;
+  color: white;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Hover só aparece em desktop */
+@media (hover: hover) {
+  .container:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.heart {
+  font-size: 2.2rem;
+  animation: pulse 2s infinite ease-in-out;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+
+h1 {
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#frase {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fadeIn 1s forwards;
+  font-weight: 400;
+}
+
+
+/* Botão */
+
+button {
+  margin-top: 30px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  background: white;
+  color: #e85d75;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* Hover apenas para dispositivos com mouse */
+@media (hover: hover) {
+  button:hover {
+    background: #ff758c;
+    color: white;
+    transform: scale(1.05);
+  }
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+/* Animações */
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width:800px) {
+    .container{
+        max-width: none;
+    }
+}
