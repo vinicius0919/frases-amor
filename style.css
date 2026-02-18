@@ -16,8 +16,7 @@ body {
 
 
 .container {
-  width: 100%;
-  max-width: 380px;
+  width: clamp(320px, 90vw, 800px);
   background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(18px);
   border-radius: 28px;
@@ -112,8 +111,12 @@ button:active {
   }
 }
 
-@media screen and (max-width:800px) {
-    .container{
-        max-width: none;
-    }
+/* Mobile pequeno */
+@media (max-width: 700px) {
+  .container {
+    max-width: 100%;
+    width: min(90vw, 600px);
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
 }
